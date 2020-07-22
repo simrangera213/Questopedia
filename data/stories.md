@@ -1,30 +1,44 @@
 ## happy path
 * greet
   - utter_greet
-* mood_great
-  - utter_happy
+* question
+  - utter_wait
+  - action_question_ask
+  - utter_did_that_help
 
 ## sad path 1
 * greet
   - utter_greet
-* mood_unhappy
-  - utter_cheer_up
+* question
+  - utter_wait
+  - action_question_ask
   - utter_did_that_help
 * affirm
   - utter_happy
 
-## sad path 2
+## happy path 3
 * greet
   - utter_greet
-* mood_unhappy
-  - utter_cheer_up
+* question
+  - utter_wait
+  - action_question_ask
+* question
+  - utter_wait
+  - action_question_ask
+* question
+  - utter_wait
+  - action_question_ask
   - utter_did_that_help
 * deny
-  - utter_goodbye
+  - utter_regret
 
 ## say goodbye
+* question
+  - utter_wait
+  - action_question_ask
 * goodbye
   - utter_goodbye
+
 
 ## bot challenge
 * bot_challenge

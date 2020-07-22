@@ -6,6 +6,21 @@
 - good evening
 - hey there
 
+
+## intent:question
+- what is photosynthesis?
+- Why clouds form?
+- WHat do you mean by crop?
+- meteorology requires?
+- Vapor doing what forms beads of liquid?
+- Beef jerky?
+- To preserve food, remove
+- formation of clouds
+- What can cause rocks to break down?
+- The process of removing weeds is known as?
+- How are crops grown?
+
+
 ## intent:goodbye
 - bye
 - goodbye
@@ -26,28 +41,6 @@
 - don't like that
 - no way
 - not really
-
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
 
 ## intent:bot_challenge
 - are you a bot?

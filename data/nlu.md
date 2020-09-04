@@ -6,7 +6,6 @@
 - good evening
 - hey there
 
-
 ## intent:question
 - what is photosynthesis?
 - Why clouds form?
@@ -20,30 +19,21 @@
 - The process of removing weeds is known as?
 - How are crops grown?
 
-
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
 
-## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
-
-## intent:deny
-- no
-- never
-- I don't think so
-- don't like that
-- no way
-- not really
 
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+
+## intent:long_feedback
+- long feedback
+- start feedback
+- give feedback
+- begin feedback

@@ -8,10 +8,29 @@ intents:
 - affirm
 - deny
 - bot_challenge
-
+- long_feedback
+- short_feedback
+slots:
+  email_address:
+    type: unfeaturized
+    auto_fill: false
+  influence:
+    type: unfeaturized
+    auto_fill: false
+  rating:
+    type: unfeaturized
+    auto_fill: false
+  rating_quick:
+    type: unfeaturized
+    auto_fill: false
+  support_feedback:
+    type: unfeaturized
+    auto_fill: false
 responses:
   utter_greet:
-  - text: Hey! How are you?
+  - image: https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif
+    text: "Hey! \U0001F44B \n Welcome to the Questopedia Bot.\nI am there to answer\
+      \ all your queries related to the Science Topics."
   utter_wait:
   - text: Please wait while I fetch the answer...
   utter_did_that_help:
@@ -21,14 +40,95 @@ responses:
   utter_happy:
   - text: Great, carry on!
   utter_goodbye:
-  - text: Bye
+  - image: https://media.giphy.com/media/26u3Zl2MQWJl2hf2g/giphy.gif
+    text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_menu:
+  - buttons:
+    - payload: /long_feedback
+      title: Yes, sure!
+    - payload: /short_feedback
+      title: No, not now
+    text: Would like to spend a moment with me?
+  utter_ask_rating:
+  - buttons:
+    - payload: '1'
+      title: 1️⃣
+    - payload: '2'
+      title: 2️⃣
+    - payload: '3'
+      title: 3️⃣
+    - payload: '4'
+      title: 4️⃣
+    - payload: '5'
+      title: 5️⃣
+    - payload: '6'
+      title: 👏👏👏😍
+    text: How was your experience with us?
+  utter_thanks:
+  - text: Thanks
+  utter_sorry:
+  - text: Sorry to hear this
+  utter_awesome:
+  - text: Awesome!
+  utter_ask_influence:
+  - text: "Sorry to hear this. \n\nCan you help me understand what influenced your\
+      \ rating?"
+  utter_influence_done:
+  - text: Thanks for bringing this issue to our attention.
+    image: https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif
+
+  utter_ask_support_feedback:
+  - text: Do you have any other feedback to share about our 24/7 support desk?
+  utter_ask_rating_quick:
+  - buttons:
+    - payload: '1'
+      title: 1️⃣
+    - payload: '2'
+      title: 2️⃣
+    - payload: '3'
+      title: 3️⃣
+    - payload: '4'
+      title: 4️⃣
+    - payload: '5'
+      title: 5️⃣
+    - payload: '6'
+      title: 👏👏👏😍
+    text: I understand. Can we do this real quick? Just choose the rating you would
+      like to give, and we say goodbye.
+  utter_pre_finish:
+  - text: Thank you for your time with us.
+    image: https://media.giphy.com/media/WnIu6vAWt5ul3EVcUE/giphy.gif
+
+  utter_finish:
+  - text: I’m sharing the information on your behalf with our team. Have a nice day!
+  utter_ask_email_address:
+  - text: Lastly, may I get your Email Address?
+  utter_no_feedback:
+  - image: https://media.giphy.com/media/AEAvhTX8RX2FdKv1HE/giphy.gif
+    text: "No issues ☺☺☺!!!\nYou can continue with your questions."
 actions:
+- action_session_start
 - action_question_ask
+- action_reset_all_slots
 - utter_greet
-- utter_cheer_up
 - utter_did_that_help
 - utter_happy
 - utter_goodbye
 - utter_iamabot
+- utter_influence_done
+- utter_pre_finish
+- utter_finish
+- utter_menu
+- utter_thanks
+- utter_sorry
+- utter_awesome
+- utter_support_feedback
+- utter_ask_email_address
+forms:
+- form_get_rating
+- form_get_rating_quick
+- form_get_influence
+- form_get_support_feedback
+- form_get_email"

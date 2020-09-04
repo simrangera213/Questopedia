@@ -8,6 +8,7 @@ from typing import Dict, Text, Any, List, Union, Optional
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+<<<<<<< HEAD
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import AllSlotsReset
 
@@ -34,7 +35,24 @@ cdqa_pipeline = QAPipeline(reader='./models/bert_qa.joblib', max_df=1.0)
 
 # Fit Retriever to documents
 cdqa_pipeline.fit_retriever(df=df)
+=======
+import os
+import pandas as pd
+import time
+from ast import literal_eval
+>>>>>>> 525fc9dae07534041de4526cb6c9fddca75cc78f
 
+from cdqa.utils.converters import pdf_converter
+from cdqa.utils.filters import filter_paragraphs
+from cdqa.pipeline import QAPipeline
+from cdqa.utils.download import download_model
+
+download_model(model='bert-squad_1.1', dir='./models')
+df = pdf_converter(directory_path='./dataset')
+cdqa_pipeline = QAPipeline(reader='./models/bert_qa.joblib', max_df=1.0)
+
+# Fit Retriever to documents
+cdqa_pipeline.fit_retriever(df=df)
 
 class ActionSessionStart(Action):
     def name(self) -> Text:
@@ -49,6 +67,7 @@ class ActionSessionStart(Action):
         dispatcher.utter_message(text="Hey! 👋")
         dispatcher.utter_message(text = "Welcome to the Questopedia Bot. \n I am there to answer all your queries related to the Science Topics.")
         return[]
+
 
 
 class ActionQuestionAsk(Action) :
